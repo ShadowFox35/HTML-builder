@@ -4,7 +4,7 @@ const path = require('path');
 fs.readdir(
   path.join(__dirname, './secret-folder'),
   (err, folder) => {
-    for (let file of folder) {
+    folder.forEach((file) =>
       fs.stat(
         path.join(__dirname, './secret-folder', file),
         (err, stats) => {
@@ -23,7 +23,7 @@ fs.readdir(
             );
           }
         }
-      );
-    }
+      )
+    );
   }
 );
