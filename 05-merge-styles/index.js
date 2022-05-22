@@ -17,7 +17,7 @@ async function createBundle() {
     if (
       file.isFile() &&
       path.extname(
-        path.join(currentFolder, `${file.name}`)
+        path.resolve(currentFolder, `${file.name}`)
       ) === '.css'
     ) {
       const readStream = fs.createReadStream(
